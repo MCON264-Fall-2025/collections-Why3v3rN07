@@ -37,7 +37,7 @@ public class LinkedCollection<T> implements CollectionInterface<T>
   }
 
   protected void find(T target)
-  // Searches the collection for an occurence of an element e such that
+  // Searches the collection for an occurrence of an element e such that
   // e.equals(target). If successful, sets instance variables
   // found to true, location to node containing e, and previous
   // to the node that links to location. If not successful, sets 

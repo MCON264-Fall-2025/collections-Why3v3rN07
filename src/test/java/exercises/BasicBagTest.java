@@ -20,8 +20,7 @@ public class BasicBagTest {
     @Test
     public void implementsBagInterfaceAndCollectionInterface() {
         BasicBag<String> bag = newBag();
-        assertTrue(bag instanceof BagInterface,
-                "BasicBag should implement BagInterface");
+        assertTrue(bag instanceof BagInterface, "BasicBag should implement BagInterface");
     }
 
     @Test
