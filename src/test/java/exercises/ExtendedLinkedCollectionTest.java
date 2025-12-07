@@ -18,6 +18,16 @@ public class ExtendedLinkedCollectionTest {
     }
 
     @Test
+    public void toStringBehavesCorrectly() {
+        ExtendedLinkedCollection<String> col = new ExtendedLinkedCollection<>();
+        col.add("p");
+        col.add("l");
+        col.add("u");
+        col.add("g");
+        assertEquals("[g, u, l, p]", col.toString());
+    }
+
+    @Test
     public void countOnEmptyCollectionIsZero() {
         ExtendedLinkedCollection<String> col = new ExtendedLinkedCollection<>();
         assertEquals( 0, col.count("anything"),"count on empty collection should be 0");
@@ -29,7 +39,6 @@ public class ExtendedLinkedCollectionTest {
         col.add("a");
         col.add("b");
         col.add("a");
-
         assertEquals(2, col.count("a"));
         assertEquals(1, col.count("b"));
         assertEquals(0, col.count("c"));
@@ -45,7 +54,7 @@ public class ExtendedLinkedCollectionTest {
         col.add("a");
 
         // assume ExtendedLinkedCollection defines removeAll similar to BagInterface
-        col.removeAll("a");
+        assertEquals(3, col.removeAll("a"));
         assertEquals(0, col.count("a"));
         assertEquals(1, col.count("b"));
         assertEquals(1, col.count("c"));
